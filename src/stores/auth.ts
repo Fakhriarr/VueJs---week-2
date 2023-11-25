@@ -6,10 +6,10 @@ export const useAuthStore = defineStore('auth', () => {
 
   const login = (name: string) => {
     username.value =  name
-  }
+  };
 
   const logout = (name: string) => {
     username.value =  ''
-  }
+  };
     return { username, login, logout }
-  })
+  });
