@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import { useAuthStore } from '@/stores/auth';
+
+const auth = useAuthStore();
+</script>
+
 <template>
-  <div>
+  <div v-if="auth.isiLoggedIn()">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

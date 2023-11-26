@@ -3,6 +3,11 @@ import { ref } from "vue";
 
 export const useAuthStore = defineStore("auth", () => {
   const username = ref("");
+
+  const isiLoggedIn = () => {
+    return username.value !== ''
+  }
+
   const login = (name: string) => {
     username.value = name;
   };
@@ -11,5 +16,5 @@ export const useAuthStore = defineStore("auth", () => {
     username.value = "";
   };
 
-  return { username, login, logout };
+  return { username, login, logout, isiLoggedIn };
 });

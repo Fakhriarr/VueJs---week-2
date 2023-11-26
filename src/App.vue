@@ -25,28 +25,24 @@ const showAlert = () => {
       <div class="flex gap-4">
         <router-link to="/">Home</router-link>
         <router-link to="/about">About</router-link>
-        <router-link v-if="auth.username" to="/restricted"
-          >Restricted Page</router-link
-        >
+        <router-link v-if="auth.username" to="/restricted">
+          Restricted Page
+        </router-link>
         <p v-else @click="showAlert">Restricted Page</p>
       </div>
       <!--Authenticated User-->
       <div class="flex gap-2 items-center">
         <p v-if="auth.username">{{ auth.username }}</p>
         <div v-if="auth.username">
-          <button
-            class="bg-red-500 text-white py-1 px=3"
-            to="/login"
-            @click="onLogout()"
-          >
+          <button class="bg-red-500 text-white py-1 px=3" to="/login" @click="onLogout()">
             Logout
           </button>
         </div>
 
         <div v-else>
-          <router-link class="bg-blue-500 text-white py-1 px-3" to="/login"
-            >Login</router-link
-          >
+          <router-link class="bg-blue-500 text-white py-1 px-3" to="/login">
+            Login
+          </router-link>
         </div>
       </div>
     </div>
